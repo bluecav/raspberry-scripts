@@ -4,8 +4,8 @@ import RPi.GPIO as GPIO
 import time
 
 GPIO.setwarnings(False)
-GPIO.setmode(GPIO.BOARD)
-GPIO.setup(11,GPIO.OUT)
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(12,GPIO.OUT)
 
 
 # here you would put all your code for setting up GPIO,
@@ -19,9 +19,9 @@ try:
     while counter < 9000000:
         # count up to 9000000 - takes ~20s
         counter += 1
-        GPIO.output(11,True)
+        GPIO.output(12,True)
         time.sleep(1)
-        GPIO.output(11,False)
+        GPIO.output(12,False)
         time.sleep(1)    
         print "Target reached: %d" % counter
 
